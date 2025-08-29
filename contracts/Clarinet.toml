@@ -1,0 +1,29 @@
+[project]
+name = "blue-carbon-registry"
+description = "Blue Carbon Registry Smart Contracts for Stacks Blockchain"
+authors = ["Blue Carbon Registry Team"]
+license = "MIT"
+
+[contracts.blue-carbon-registry]
+path = "blue-carbon-registry.clar"
+depends_on = []
+
+[contracts.blue-carbon-marketplace]
+path = "blue-carbon-marketplace.clar"
+depends_on = ["blue-carbon-registry"]
+
+[contracts.sensor-verification]
+path = "sensor-verification.clar"
+depends_on = ["blue-carbon-registry"]
+
+[networks]
+[networks.testnet]
+name = "testnet"
+deployment_dir = "deployments/testnet"
+
+[networks.mainnet]
+name = "mainnet"
+deployment_dir = "deployments/mainnet"
+
+[requirements]
+clarinet = ">=1.0.0"
